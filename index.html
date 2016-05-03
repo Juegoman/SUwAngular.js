@@ -4,12 +4,19 @@
 		<link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
 		<title>Testing</title>
 	</head>
-	<body>
+	<body ng-controller="StoreController as store">
+		<ul class="list-group">
+			<li class="list-group-item" ng-repeat="product in store.products">
+				<h3>
+					{{product.name}}
+					<em class="pull-right">{{product.price | currency}}</em>
+				</h3>
+				<div class="gallery">
+					<img ng-src="{{product.image}}" />
+				</div>
+			</li>
+		</ul>
 		<script type="text/javascript" src="angular.min.js"></script>
 		<script type="text/javascript" src="app.js"></script>
-
-		<p>
-			{{"Hello" + " you."}}
-		</p>
 	</body>
 </html>
